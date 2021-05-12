@@ -44,13 +44,31 @@ Place.prototype.setHourlyCookies = function() { //creating a function that Place
   this.hours.push(`Total: ${total} cookies`);
 }
 
-function createHeader()
+function createHeader() {
+  let times = ['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM', '11:00AM', '12:00PM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM','7:00PM'];
+
+  const header = document.getElementById('table-head'); // Assigns a variable to the header element in HTML.
+
+  const table = document.createElement('table'); // creates the table which will be used to store all info.
+  header.appendChild(table);
+
+  const tHeadElem = document.createElement('thead');
+  table.appendChild(tHeadElem);
+
+  let trElem = document.createElement('tr');
+  
+
+  
+
+  for (let a = 0; a < times.length; a++) {
+
+  }
+}
 function createTable(Place) {
 
-  const locations = document.getElementById('Locations');
 
   const article = document.createElement('article');
-  locations.appendChild(article);
+  table.appendChild(article);
 
   const h1Elem = document.createElement('h1');
   h1Elem.textContent = Place.name;
