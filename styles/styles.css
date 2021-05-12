@@ -1,24 +1,15 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: auto;
+  margin: auto;
+  align-items: center;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   overflow: scroll;
-}
-
-article {
-  justify-content: center;
-  display: inline-block;
-  background-color: #fff3c7;
-  border-radius: 3%;
-  margin: 1.5rem;
-  padding: 1rem 1.5rem;
-
 }
 
 a {
@@ -29,16 +20,8 @@ img {
   width: 10%;
 }
 
-#table-top * {
-  border: solid black 2px;
-  background-color: #fff3c7;
-  padding: 0.2rem;
-  display: 
-}
-
-#table-head {
-    margin: 2rem 1.5rem;
-    border-radius: 3%;
+table {
+  box-shadow: -.5em .5em #111111;
 }
 .container {
   width: 94vw;
@@ -100,4 +83,12 @@ background: #cceefc;
   padding: 1rem;
 }
 
+#table-top * {
+  border: solid black 2px;
+  background-color: #fff3c7;
+  padding: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1%;
+}
   

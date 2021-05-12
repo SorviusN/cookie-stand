@@ -47,10 +47,9 @@ Lima
 
 console.log(Seattle.name);
 
+var times = ['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM', '11:00AM', '12:00PM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM','7:00PM', 'Daily Location Total'];
 
 function createHeader() {
-  let times = ['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM', '11:00AM', '12:00PM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM','7:00PM', 'Daily Location Total'];
-
   const header = document.getElementById('table-top'); // Assigns a variable to the header element in HTML.
 
   const table = document.createElement('table'); // creates the table which will be used to store all info.
@@ -94,7 +93,7 @@ function createTable(Place) {
   Place.generateCookies();
 
   let tdElem = null;
-  for (let a = 0; a < 14; a++) {
+  for (let a = 0; a < Place.hours.length; a++) {
     tdElem = document.createElement('td');
     tdElem.textContent = Place.hours[a];
     trElem.appendChild(tdElem);
@@ -105,32 +104,40 @@ function createTable(Place) {
   trElem.appendChild(totalElem);
 }
 
-function createFooter() {
-  const header = document.getElementById('table-head');
-
-  const tfootElem = document.createElement('tfoot');
-  header.appendChild(tfootElem);
-
-  const trElem = document.createElement('tr');
-  tfootElem.appendChild(trElem);
-
-  const buffer = document.createElement('td');
-  trElem.appendChild(buffer);
-
-  const tdElem = document.createElement('td');
-  for (let a = 0; a < 14; a++) {
-    tdElem.textContent = '1000';
-    trElem.appendChild(tdElem);
-  }
-}
-
-function getTotals() {
-  let sum = 0 
-}
 createHeader();
 createTable(Seattle);
 createTable(Tokyo);
 createTable(Dubai);
 createTable(Paris);
 createTable(Lima);
+
+function createFooter() {
+  const header = document.getElementById('table-top');
+
+  const table = document.getElementById('table');
+  header.appendChild(table);
+
+  const tfootElem = document.createElement('tfoot');
+  table.appendChild(tfootElem);
+
+  const trElem = document.createElement('tr');
+  tfootElem.appendChild(trElem);
+
+  const buffer = document.createElement('th');
+  buffer.textContent = 'Totals';
+  trElem.appendChild(buffer);
+
+  for (let a = 0; a < (times.length - 1); a++) {
+    let tdElem = document.createElement('td');
+    trElem.appendChild(tdElem);
+    let sum;
+    for (let b = 0; b < places.length; b++)  {
+      sum += places[b].hours[a];
+    }
+    tdElem.textContent = sum;
+  }
+}
+
 createFooter();
+
+console.log()
