@@ -1,14 +1,13 @@
 'use strict';
 
-function Place(name, minCustomers, maxCustomers, avgCookies, hourlyCookies, hours, total) {
+function Place(name, minCustomers, maxCustomers, avgCookies) {
   this.name = name;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookies = avgCookies;
-  this.hourlyCookies = hourlyCookies;
-  this.hours = hours;
-  this.total = total;
-
+  this.hourlyCookies = 0;
+  this.hours = []
+  this.total = 0;
 }
 
 function randomCookies(max, min, avg) { // global function for randomizing the cookies.
@@ -32,11 +31,19 @@ Place.prototype.generateCookies = function() { //creating a function that Place 
     this.total = total;
 }
 
-let Seattle = new Place('Seattle', 23, 65, 6.3, 0, [], 0);
-let Tokyo = new Place('Tokyo', 3, 24, 1.2, 0, [], 0);  
-let Dubai = new Place('Dubai', 11, 38, 3.7, 0, [], 0);
-let Paris = new Place('Paris', 20, 38, 2.3, 0, [], 0);
-let Lima = new Place('Lima', 2, 16, 4.6, 0, [], 0);
+let Seattle = new Place('Seattle', 23, 65, 6.3);
+let Tokyo = new Place('Tokyo', 3, 24, 1.2);  
+let Dubai = new Place('Dubai', 11, 38, 3.7);
+let Paris = new Place('Paris', 20, 38, 2.3);
+let Lima = new Place('Lima', 2, 16, 4.6);
+
+let places = [
+Seattle,
+Tokyo,
+Dubai,
+Paris,
+Lima
+];
 
 console.log(Seattle.name);
 
@@ -44,9 +51,10 @@ console.log(Seattle.name);
 function createHeader() {
   let times = ['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM', '11:00AM', '12:00PM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM','7:00PM', 'Daily Location Total'];
 
-  const header = document.getElementById('table-head'); // Assigns a variable to the header element in HTML.
+  const header = document.getElementById('table-top'); // Assigns a variable to the header element in HTML.
 
   const table = document.createElement('table'); // creates the table which will be used to store all info.
+  table.setAttribute("id", "table")
   header.appendChild(table);
 
   const tHeadElem = document.createElement('thead');
@@ -67,10 +75,13 @@ function createHeader() {
 
 function createTable(Place) {
 
-  const header = document.getElementById('table-head');
+  const header = document.getElementById('table-top');
+
+  const table = document.getElementById('table');
+  header.appendChild(table);
 
   const tbodyElem = document.createElement('tbody');
-  header.appendChild(tbodyElem);
+  table.appendChild(tbodyElem);
 
   const trElem = document.createElement('tr');
   tbodyElem.appendChild(trElem);
@@ -111,6 +122,10 @@ function createFooter() {
     tdElem.textContent = '1000';
     trElem.appendChild(tdElem);
   }
+}
+
+function getTotals() {
+  let sum = 0 
 }
 createHeader();
 createTable(Seattle);

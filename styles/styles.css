@@ -29,18 +29,11 @@ img {
   width: 10%;
 }
 
-th {
-  width: 98px;
-}
-
-td {
-  width: 100px;
-}
-
-#table-head * {
+#table-top * {
   border: solid black 2px;
   background-color: #fff3c7;
   padding: 0.2rem;
+  display: 
 }
 
 #table-head {
