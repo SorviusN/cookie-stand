@@ -18,7 +18,7 @@ article {
   border-radius: 3%;
   margin: 1.5rem;
   padding: 1rem 1.5rem;
-  box-shadow: -.5em .5em forestgreen;
+
 }
 
 a {
@@ -29,6 +29,24 @@ img {
   width: 10%;
 }
 
+th {
+  width: 98px;
+}
+
+td {
+  width: 100px;
+}
+
+#table-head * {
+  border: solid black 2px;
+  background-color: #fff3c7;
+  padding: 0.2rem;
+}
+
+#table-head {
+    margin: 2rem 1.5rem;
+    border-radius: 3%;
+}
 .container {
   width: 94vw;
   margin: 0 auto;
