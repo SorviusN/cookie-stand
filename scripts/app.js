@@ -6,7 +6,7 @@ function Place(name, minCustomers, maxCustomers, avgCookies) {
   this.maxCustomers = maxCustomers;
   this.avgCookies = avgCookies;
   this.hourlyCookies = 0;
-  this.hours = []
+  this.hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   this.total = 0;
 }
 
@@ -136,6 +136,16 @@ function createFooter() {
     }
     tdElem.textContent = sum;
   }
+
+  let fullTotal = 0;
+
+  for (let c = 0; c < places.length; c++) {
+    fullTotal += places[c].total;
+  }
+
+  const all = document.createElement('td');
+  all.textContent = fullTotal;
+  trElem.appendChild(all);
 }
 
 createFooter();
