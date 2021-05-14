@@ -1,4 +1,7 @@
-
+:root {
+  --primary-color: #dbf8ff;
+  --secondary-color: #484848;
+}
 * {
   box-sizing: border-box;
   padding: auto;
@@ -6,13 +9,10 @@
   align-items: center;
 }
 
-
 body {
   font-family: 'Arial', serif;
-  font-size: 1.2em;
-  background-color: #cceefc;
+  background-color: var(--primary-color);
 }
-
 
 main {
   display: flex;
@@ -24,57 +24,65 @@ main {
 main ul {
   list-style: none;
 }
+
 main li {
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 main img {
-  border-radius: 1%;
-  border: solid black 2px;
+  border-radius: 2%;
+  border: solid black 1px;
   margin: 1em 0;
+  box-shadow: .5em .5em rgba(0, 0, 0, 0.2);
 }
 
-a {
-  color: green;
+main img:nth-child(2) {
+  border-radius: 50%;
+  border: solid black 5px;
 }
 
-.header img {
-  width: 10%;
+
+li a {
+  color: black;
 }
 
 table {
-  box-shadow: -.5em .5em #111111;
+  box-shadow: .5em .5em rgba(0, 0, 0, 0.2);
 }
 
 td {
-  color: green;
+  color: lightgray;
 }
-.container {
-  width: 94vw;
-  margin: 0 auto;
+
+button {
+  font-size: 1.3rem;
+  background-color: #fff3c7;
+  margin-left: 0;
+  margin-top: 10px;
 }
 
 article {
+  color: lightgray;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   max-width: 600px;
   min-width: 50px;
-  background-color: #fff3c7;
-  border-radius: 5%;
-  border: solid black 3px;
+  background-color: var(--secondary-color);
+  border-radius: right 5%;
+  border: solid black 2px;
   box-shadow: .5em .5em rgba(0, 0, 0, 0.2);
   padding: 1em;
-
 }
 
 article h2 {
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
-.header {
-  background: #cceefc;
+.container {
+  width: 94vw;
+  margin: 0 auto;
 }
 
 .header-wrapper {
@@ -85,10 +93,19 @@ article h2 {
   padding-top: 55.2px;
 }
 
+.header img {
+  width: 150px;
+}
+
+.head-text {
+  color: black;
+  font-size: 2.5rem;
+}
+
 .navbar {
-  background: #fff3c7;
+  background: rgba(100, 100, 100, 0.4);
   padding: 0.5rem 0;
-  border-bottom: 3px solid green;
+  border-bottom: 3px solid grey;
 }
 
 .navbar-wrapper {
@@ -101,7 +118,7 @@ article h2 {
 .bar1, .bar2, .bar3 {
   width: 26px;
   height: 4px;
-  background: green;
+  background: black;
   margin: 6px 0;
   transition: all 0.5s ease;
 }
@@ -115,8 +132,7 @@ article h2 {
 
 .brand-toggler {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
 
 .navbar-brand {
@@ -132,18 +148,28 @@ article h2 {
   background: #fff3c7;
   position: fixed;
   right: 0;
-  height: 10%;
-  border-radius: 5%;gt
-  border: solid #bababa;
+  border-radius: 5%;
+  border: solid black 3px;
+}
+
+.form-wrapper {
+  margin-top: 5rem;
 }
 
 #table-top * {
   border: solid black 2px;
-  background-color: #fff3c7;
+  background-color: var(--secondary-color);
+  color: lightgray;
   padding: 0.2rem;
   align-items: center;
   justify-content: center;
   border-radius: 1%;
+}
+
+#add-location-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
 
 #title-container {
@@ -156,53 +182,37 @@ article h2 {
 #sub-banner-container {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 #sub-banner-container img {
   margin: 0 2rem;
-  width: 400px;
+  max-width: 400px;
 }
 
 #featured-section-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 0 3rem;
-  width: 75%;
 }
 
 #featured-section-container article {
   margin: 2rem;
-  background-color: #db8074;
-}
-
-#lower-section-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-#lower-section-container * {
-  margin: 0 2rem;
-  padding: 0.3rem;
-}
-
-footer {
-  display: flex;
-  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 5%;
 }
 
 footer div {
   display: flex;
   justify-content: center;
-  color: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 7vh;
-  background-color: #fff3c7;
-  border: solid green;
   position: fixed;
-  bottom: 0;
+  color: #fff3c7;
+  width: 100%;
+  height: 3vh;
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 999;
+  bottom: 0;
 }
 
 

@@ -17,7 +17,8 @@
       <div class="navbar-wrapper container">
         <nav class="navbar">
           <div class="brand-toggler container">
-            <a href="sales.html" class="navbar-brand">Salmon Cookies <img src="./images/salmon.png"></a>
+            <a href="sales.html" class="navbar-brand"><img src="./images/salmon.png"></a>
+            <h1 class="head-text">Salmon Cookies</h1>
             <button type="button" class="navbar-toggler" id="navbar-toggler">
               <div class="bar1"></div>
               <div class="bar2"></div>
@@ -35,12 +36,40 @@
             </li>
           </ul>
         </div>
-        <header id="table-top"></header>
-        <header id="table-footer"></header>
       </div>
     </div>
   </section>
-  
+  <section>
+    <header id="table-top"></header>
+  </section>
+  <section>
+    <article class="form-wrapper"> 
+      <h1>ADD A LOCATION</h1>
+      <form id="add-location-form">
+        <fieldset>
+          <label>Location Name
+            <input name="name" type="text">
+          </label>
+          <label> Maximum Customers Per Hour
+            <input id="max-customers" name="maxCustomers" type="range" min="50" max="200" step="5" value="100">
+            <output class="max-customers-output" for="max-customers"></output>
+          </label>
+          <label> Minimum Customers Per Hour
+            <input id="min-customers" name="minCustomers" type="range" min="1" max="50" step="1" value="25">
+            <output class="min-customers-output" for="min-customers"></output>
+          </label>
+          <label> Average Cookies Per Customer (1-10)
+            <input id="avg-cookies" name="avgCookies" type="text">
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
+    </article>
+  </section>
+  <footer>
+    <div>
+      Salmon Cookies, LLC - salmon.cookies@icloud.com
+    </div>
+  </footer>
   <script src="scripts/app.js"></script>
 </body>
 </html>
