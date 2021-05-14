@@ -115,25 +115,21 @@ function renderFooter() {
   buffer.textContent = 'Totals';
   trElem.appendChild(buffer);
 
-  for (let a = 0; a < (times.length - 5); a++) {
+  let fullTotal = 0;
+
+  for (let a = 0; a < times.length - 1; a++) {
     let tdElem = document.createElement('td');
     trElem.appendChild(tdElem);
-    let sum;
+    let sum = 0;
     for (let b = 0; b < places.length; b++)  {
       sum += places[b].hours[a];
     }
+    fullTotal += sum;
     tdElem.textContent = sum;
   }
-
-  let fullTotal = 0;
-
-  for (let c = 0; c < places.length; c++) {
-    fullTotal += places[c].total;
-
-  const all = document.createElement('td');
-  all.textContent = fullTotal;
-  trElem.appendChild(all);
-  }
+  const totalElem = document.createElement('td');
+  totalElem.textContent = fullTotal;
+  trElem.appendChild(totalElem);
 }
 
 // Dynamically adjusting slider scale for Max/Min customers in addLocation field
@@ -167,6 +163,11 @@ function handleSubmit() {
   let minCustomers = parseInt(event.target.minCustomers.value);
   let maxCustomers = parseInt(event.target.maxCustomers.value);
   let avgCookies = parseInt(event.target.avgCookies.value);
+
+  if (name === '' || avgCookies == '') {
+    alert('Please enter in a valid location.');
+    return false;
+  }
 
   let newPlace = new Place(name, minCustomers, maxCustomers, avgCookies);
   places.push(newPlace);
