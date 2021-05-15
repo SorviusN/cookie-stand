@@ -185,7 +185,7 @@ article h2 {
 
 #sub-banner-container img {
   margin: 0 2rem;
-  width: 200px;
+  width: 15%;
 }
 
 #sub-banner-container article {
@@ -198,7 +198,6 @@ article h2 {
 
 #featured-section-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: center;
   width: 100%;
